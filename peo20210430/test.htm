@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>타이틀</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">      
+        <!-- css를 따로 지정할 때는 style 태그 사용 -->
+        <style>
+            /* a 태그 스타일적용 */
+            a:link {
+                color: red;
+                /* 배경을 투명하게 한다 */
+                background-color: transparent;
+                /* 링크 밑줄 제거 */
+                text-decoration: none;
+            }
+            a:visited{
+                /* 링크를 사용했을 때 링크색깔이 변한다. */
+                color:dodgerblue;
+            }
+            a:hover {
+                /* 링크에 마우스를 올렸을 때 색깔이 바뀐다 */
+                color: blue;
+            }
+        </style>
+    </head>
+    <!-- stryle 속성 : css 를 적용할 때 사용
+            속성갑으로 css 문법을 작성 -->
+    <body style="background-color: yellow;">
+        <h1 style="background-color: turquoise;">제목</h1>  <!--h1은 6까지 있다-->
+        <p>해당 내용을 작성</p>
+        <h2>내용 제목</h2>
+        <h3>제목</h3>
+        <!-- 기본 color는 글자색을 바꿔준다. -->
+        <h4 style="color: tomato;">제목</h4>     
+        <!-- font=family는 글자모양을 바꿔준다. -->
+        <h5 style="font-family: 'Times New Roman', Times, serif;">제목5</h5>
+        <h6>제목</h6> <!-- 점점 작아진다 -->
+        <!-- 링크태그 -->
+        <!-- a href(속성(attridut)을 사용
+            속성값에 주소 값을 작성) -->
+        <a href="https://www.naver.com/">네이버링크</a>
+
+        <!-- 구글폰트 적용 -->
+        <h1 style="font-family: 'Yeon Sung', cursive;;">구글폰트</h1>
+
+        <!-- 글자 편집을 위한 다양한 태그 -->
+        <b>d는 무엇인가</b>
+        <strong>strong은 무엇인가</strong>
+        <i>i는 무엇인가</i>
+        <samll>samll은 무엇인가</samll> <!--글씨를 작게-->
+        <del>del은 무엇인가</del>
+        <sub>sub는 무엇인가</sub> <!--아랫천장-->
+        <sup>sup은 무엇인가</sup> <!--윗천장-->
+
+        <!-- 색 표현 -->
+        <h2 style="background-color: red;">빨간색</h2>
+        <h2 style="background-color: rgb(150, 0, 100);">빨간색</h2>
+        <h2 style="background-color: rgba(255, 0, 0, 0.1);">빨간색</h2> <!--투명도 지정-->
+
+        <!-- 16진수
+        10진수 : 0~9까지 넣을수이는 숫자
+        2진수 : 0(false)), 1(true)
+        16진수 : 0~9까지는 똑같고 11~부터는 A,B,C,D,E,F -->
+        <h2 style="background-color: #FF0000;">빨간색</h2>  
+        <!-- 00~ff(255) -->
+
+
+        <!-- 이미지 삽입
+            src 속성값 : 그림경로  -->
+        <img src="/imgages/사막222.jpg" style="width:400px; height:200px;">
+        <img src="/imgages/사막222.jpg" width="400" height="200">
+        <img src="/imgages/사막222.jg" width="400" height="200" alt="사막이다"> <!--alt : 그림이 안나오면 설명을 해줄수있는 속성-->
+        
+        <!-- 이미지를 링크로 활용하기 -->
+        <a href="https://www.naver.com/" target="_blank"> <!--현재있는탭을 이동 안하고 바로 새탭이 열리며서 사이트에 들어간다.-->
+        <img src="/imgages/네이버.png" width="400" height="200">
+        </a>
+
+        
+
+
+
+
+            
+    </body>
+</html>
