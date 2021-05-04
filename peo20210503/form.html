@@ -12,6 +12,7 @@
             아이디 : <input type="text" id="id1" name="name1" placeholder="아이디를입력하세요"> <br> <!--place(안내글)-->
             <label for="id2">비밀번호: </label>
                 <input type="text" id="id2" name="name2"><br>
+            
             지역 : 
             <select name="city">
                 <option value="incheon">인천</option>
@@ -20,15 +21,17 @@
             </select>
             이메일 :
             <input type="text" name="email">@
+
             <!-- 만약 지메일을 선택하면 백엔드로 전달될 때
                 option 태그의 value 속성값이 담겨서 감 domain=gmail.com -->
+           
             <select name="domain">
                 <option value="" selected>선택하세요</option>
                 <option value="namever.com">네이버</option>
                 <option value="hanmail.com">다음</option>
                 <option value="gmail.com">지메일</option>
                 <br>
-            </select>
+            </select><br>
             자기소개 : <textarea name="intro" rows="5" cols="10"></textarea><br>
             비밀번호 : <input type="password" name="password"><br>
             성별 : <input type="radio" name="gender" value="male">남
