@@ -5,7 +5,7 @@
     </head>
     <body>
         <form action="boardwrite" method="post">
-            제목: <input type="text" name="btitle"><br>
+            제목: <input type="text" name="btitle" value="제목" readonly><br> <!--readonly 사용자가 수정못하게 막아준다.-->
             작성자: <input type="text" name="bwriter"><br>
             비밀번호: <input type="password" name="bpassword"><br>
             내용 : <textarea name="intro" rows="4" cols="20"></textarea><br>
@@ -17,7 +17,8 @@
             </select><br>
             전체공개여부: <input type="radio" name="bopen" value="yes">예
                          <input type="radio" name="bopen" value="no">아니오<br>
-            <input type="submit" value="저장">
+            <input type="submit" value="저장"><br>
+            <button>저장버튼</button> <!--form태그 내에 있는 button 태그는 submit의 역할을 함-->
         </form>
     </body>
 </html>
