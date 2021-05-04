@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>테이블 연습</title>
+        <style>
+            /* 여러 태그를 동시에 지정할 때는 , 로 연결 */
+            table, tr, td, th {
+                border:  1px solid red;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+            td {
+                text-align: right; 
+            }
+            tr:nth-child(even) { 
+                background-color: yellow;
+            }
+            /* even 짝수로 색깔을 입힌다. */
+            tr:nth-child(odd) {
+                background-color: green;
+            }
+            /* odd 홀수로 색을 입힌다 */
+            /* table {     
+                border: 1px solid black;  
+            }
+            tr, td {
+                border: 1px solid red;
+            } */
+        </style>
+    </head>
+    <body>
+        <!-- 테이블 태그 -->
+        <table>  <!-- border는 선을 보여준다-->
+            <caption>학생정보</caption>  <!-- caption은 표제목을 만들 때 쓰인다-->
+            <tr>  <!--새로운 행(가로) 추가-->
+                    <!-- 새로운 열(세로) 추가 -->
+                <th>이름</th>
+                <th>이메일주소</th>
+                <th>전화번호</th>
+            </tr>
+            <tr>
+                <td>학생1</td>
+                <td>aa@aa</td>
+                <td>010-1111-1111</td>
+            </tr>
+            <tr>
+                <td>학생2</td>
+                <td>bb@bb</td>
+                <td>010-2222-2222</td>
+            </tr>
+            <tr>
+                <td>학생3</td>
+                <td>cc@cc</td>
+                <td>010-3333-3333</td>
+            </tr>
+            <tr>
+                <td colspan="2">학생4</td> <!-- 칸수 -->
+                <td rowspan="2">dd@dd</td>
+                <td>010-4444-4444</td>
+            </tr>
+            <tr>
+                <td colspan="2">학생5</td>
+            </tr>
+        </table>
+    </body>
+</html>
