@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calGrade() {
+            var score = document.getElementById('score').Value;
+            var grade;                    
+           
+            if(score>=90){
+                grade = 'a';
+            } else if(score>=80){
+                grade = 'b';
+            } else if(score>=70){
+                grade = 'c';
+            } else if(score>=60){
+                grade = 'd';
+            } else if(score>=50){
+                grade = 'f';
+            }
+            document.getElementById('grade').Value=grade;
+            document.getElementById('result').innerHTML=grade;
+        }
+        // console은 화면에는 출력이 안됨
+
+
+    </script>
+
+
+</head>
+<body>
+    <h1>성적산출하기</h1>
+    점수: <input type="text" id="score"><br>
+    성적: <input type="text" id="grade"><br>
+    <button onclick="calGrade()">성적이 나오는 곳</button>
+    <div id="result">
+        성적출력
+    </div>
+</body>
+</html>
