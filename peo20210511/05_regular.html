@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function idcheck() {
+            // 영문소문자, 숫자 6~10자리 정규식
+            var exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{6,10}$/;
+            // 영문소문대문자 가능
+            var exp1 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA Z\d]{6,10}$/;
+            var id = document.getElementById('id1').value;
+            var result = document.getElementById('idcheck');
+            // 정규식은 반드시 이런 문법을 써야함.
+            if(id.match(exp1)){
+                result.style.color = 'green';
+                result.innerHTML = '유요한 id 형식입니다.'
+            } else {
+                result.style.color = 'red';
+                result.innerHTML = '6~10글자 숫자, 영문 소문자를 사용해주세요';
+            }
+        }
+    </script>
+    <style>
+        input {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 정규식(regular expression) -->
+    아이디: <input type="text" id="id1" onblur="idcheck" placeholder="영문소문자, 숫자, 6~10글자이내로 입력해주세요"><br>
+    <span id="idcheck"></span>
+    <button onclick="idcheck()">정규식체크</button>
+</body>
+</html>

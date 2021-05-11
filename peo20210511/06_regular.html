@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function idcheck() {
+            var exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{6,10}$/;  
+            var exp1 = /^(?=.*[a-z])(?=.*\d)[a-z\d]{6,10}$/;  
+            
+            //  // 영문대소문자, 숫자, 6~10자리 정규식 
+            //  var exp1 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,10}$/;
+            // // 네이버 아이디 정규식 
+            // // 영문소문자, 숫자, -_ 특수문자, 5~20자리
+            // var exp = /^(?=.*[a-z])(?=.*\d)(?=.*[-_])[a-z\d-_]{5,20}$/;
+
+
+
+            var id = document.getElementById('id').value;
+            var result = document.getElementById('check');
+           
+            if(id.match(exp)){
+                result.style.color = 'green';
+                result.innerHTML = '유효한 id 형식입니다.'
+            } else if(id.length==0){
+                result.style.color = 'red';
+                result.innerHTML = '아이디를 입력해주세요.';
+            } else {
+                result.style.color = 'red';
+                result.innerHTML = '아이디가 유효하지않습니다.';
+            }
+        }
+    </script>
+</head>
+<body>
+    아이디: <input type="text" id="id" placeholder="영문소문자,숫자,6~10글자"><br>
+    <span id="check"></span>
+    <button onclick="idcheck()">ID정규식체크</button>
+</body>
+</html>
