@@ -11,15 +11,28 @@
             var pw = document.getElementById('pw').value;
             var pswd = document.getElementById('pswd').value;
             var ele = document.getElementById('sp');
-            if(pw.length==0){
-                ele.style.color = 'red';
-                ele.innerHTML = '필수입력정보입니다.';
-            } else if(!pw.match(exe)){
-                ele.style.color = 'red';
-                ele.innerHTML = '유요하지 않은 형식입니다.';         
-            } else {
+            //pw.length==0
+
+            // if(pw.match(exe)){
+            //     ele.style.color = 'red';
+            //     ele.innerHTML = '필수입력정보입니다.';
+            // } else if(pw.length==0){
+            //     ele.style.color = 'red';
+            //     ele.innerHTML = '유요하지 않은 형식입니다.';         
+            // } else {
+            //     ele.style.color = 'green';
+            //     ele.innerHTML = '유효한형식입니다.';
+            // }
+            
+            if(pw.match(exe)){
                 ele.style.color = 'green';
                 ele.innerHTML = '유효한형식입니다.';
+            } else if(pw.length==0){
+                ele.style.color = 'red';
+                ele.innerHTML = '필수입력정보입니다.';         
+            } else {
+                ele.style.color = 'red';
+                ele.innerHTML = '유효하지 않은 형식입니다.';  
             }
         } 
         function password() {
