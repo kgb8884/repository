@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pas() {
+            var exp = /^(?=.*[a-z])(?=.*\d)(?=.*[-_])[a-z\d-_]{8,18}$/;
+            var pw = document.getElementById('pw').value;
+            var pswd = document.getElementById('pswd').value;
+            var ele = document.getElementById('sp');
+            if(pw.length==0){
+                ele.style.color = 'red';
+                ele.innerHTML = '필수입력정보입니다.';
+            } else if(!pw.match(exe)){
+                ele.style.color = 'red';
+                ele.innerHTML = '유요하지 않은 형식입니다.';         
+            } else {
+                ele.style.color = 'green';
+                ele.innerHTML = '유효한형식입니다.';
+            }
+        } 
+        function password() {
+            var pw = document.getElementById('pw').value;
+            var pswd = document.getElementById('pswd').value;
+            var ele = document.getElementById('sp');
+            if(pw == pswd) {
+                ele.style.color = 'green';
+                ele.innerHTML = '비밀번호 일치';
+            } else {
+                ele.style.color = 'red';
+                ele.innerHTML = '비밀번호 불일치';       
+            }
+        }
+    </script>
+</head>
+<body>
+    비밀번호:<input type="text" id="pw" onblur="pas()" placeholder="비밀번호를 입력해주세요"><br>
+    비밀번호확인:<input type="text" id="pswd" onblur = "password()" placeholder="비밀번호 재확인"><br>
+    <span id="sp"></span>
+</body>
+</html>
