@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test1() {
+            console.log('호출');
+            var num1 = document.getElementById('id1').value;
+            var num2 = document.getElementById('id2').value;
+            var ele = document.getElementById('id3');
+            if(num1 == num2){
+                ele.style.color = 'green';
+                ele.innerHTML = '일치합니다.';
+            } else {
+                ele.style.color = 'red';
+                ele.innerHTML = '비밀번호가 불일치합니다.'
+            }
+        }
+    </script>
+    <style>
+        #id2 {          
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    비밀번호: <input type="text" id="id1" placeholder="비밀번호를 입력하세요"><br>
+    비밀번호확인: <input type="text" id="id2" onkeyup="test1()" placeholder="비밀번호를 한번 더 입력하세요."><br>
+    <span id="id3"></span>
+</body>
+</html>
