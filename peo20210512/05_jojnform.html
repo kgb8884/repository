@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 아이디
+        function idcheck(){
+            var exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{6,10}$/;
+            var id = document.getElementById('id');
+            var idresult = document.getElementById('id-check-result');
+            if(id.value.length==0){
+                idresult.style.color = 'red';
+                idresult.innerHTML = '아이디는 필수 입니다.';
+            } else if(!id.value.match(exp)){
+                idresult.style.color = 'red';
+                idresult.innerHTML = '유효하지 않은 형식입니다.';
+            } else {
+                idresult.style.color = 'green';
+                idresult.innerHTML = '좋아요 good';
+            }
+        }
+        // 비밀번호
+        function pwcheck() {
+            var exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@!%*?&])[A-Za-z\d$@!%*#?&]{8,16}$/;
+            var pw = document.getElementById('pw').value;
+            var pwcheck = document.getElementById('pw-check-result');
+            if(pw.length==0){
+                pwcheck.style.color = 'red';
+                pwcheck.innerHTML = '비밀번호는 필수입니다.';
+            } else if(pw.match(exp)){
+                pwcheck.style.color = 'green';
+                pwcheck.innerHTML = '유효한 비밀번호형식.'
+            } else {
+                pwcheck.style.color = 'red';
+                pwcheck.innerHTML = '유효한 비밀번호형식이 아닙니다.';
+            }
+        }
+        // 비밀번호 확인
+        function pwconfirm() {
+            var pw = document.getElementById('pw').value;
+            var pwconfirm = document.getElementById('pw-confirm').value;
+            var confirmresult = document.getElementById('pw-confirm-result');
+            if(pw == pwconfirm){
+                confirmresult.style.color = 'green';
+                confirmresult.innerHTML = '비밀번호 일치';
+            } else {
+                confirmresult.style.color = 'red';
+                confirmresult.innerHTML = '비밀번호 불일치';
+            }
+        }
+        // name
+        function namecheck() {
+            var name = document.getElementById('name').value;
+            var nameresult = document.getElementById('name-check-result');
+            if(name.length==0){
+                nameresult.style.color = 'red';
+                nameresult.innerHTML = '이름은 필수입니다.';
+            } else {
+                nameresult.style.color = 'green';
+                nameresult.innerHTML = 'good';
+            }
+        }
+        // 전화번호
+        function phonecheck(){
+            var exp = /^\d{3}-\d{4}-\d{4}$/;
+            var phone = document.getElementById('phone').value;
+            var result = document.getElementById('phone-check-result');
+            if(phone.match(exp)){
+                result.style.color = 'green';
+                result.innerHTML = '유효한형식';
+            } else {
+                result.style.color = 'red';
+                result.innerHTML = '유효하지 않은 전화번호 형식';
+            }
+        }
+        // 이메일
+        function emailselect(value){
+            document.getElementById('domain').value = value;
+        }
+    </script>
+</head>
+<body>
+    <h2>회원가입</h2>
+    아이디:
+        <input type="text" id="id" placeholder="6~10자리, 소문자, 숫자포함" onblur="idcheck()">
+        <span id="id-check-result"></span><br>
+    비밀번호:
+        <input type="text" id="pw" placeholder="8~16자리,숫자,대소문자,특수문자포함" onblur="pwcheck()"><br>
+        <span id="pw-check-result"></span><br>
+    비밀번호 확인:
+        <input type="text" id="pw-confirm" onblur="pwconfirm()">
+        <span id="pw-confirm-result"></span><br>
+    이름:
+        <input type="text" id="name" onblur="namecheck()">
+        <span id="name-check-result"></span><br>
+    이메일:
+        <input type="text" id="email">@
+        <input type="text" id="domain">
+        <select id="domain-select" onchange="emailselect(this.value)">
+            <option value="">직접입력</option>
+            <option value="naver.com">naver.com</option>
+            <option value="hanmail.net">hanmail.net</option>
+            <option value="gmail.com">gmail.com</option>
+        </select> <br>
+
+    휴대폰번호 :
+        <input type="text" id="phone" onblur="phonecheck()">
+        <span id="phone-check-result"></span><br>
+ 
+        
+</body>
+</html>

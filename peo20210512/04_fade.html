@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script> 
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+        #div1 {
+            background-color: red;
+        }
+        #div2 {
+            background-color: green;
+        }
+        #div3 {
+            background-color: blue;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#div1").fadeIn(); // fadeIn : 나타나다
+                $("#div2").fadeIn("slow"); 
+                $("#div3").fadeIn(3000); // 걸리는 시간
+            });
+            $("#btn2").click(function(){
+                $("#div1").fadeOut(); // fadeOut : 사라지다
+                $("#div2").fadeOut("slow"); 
+                $("#div3").fadeOut(3000); 
+            });
+            $("#btn3").click(function(){
+                $("#div1").fadeToggle(); // fadeToggle : in과 out을 같이 사용한다.
+                $("#div2").fadeToggle("slow"); 
+                $("#div3").fadeToggle(3000); 
+            });
+            $("#btn4").click(function(){
+                $("#div1").fadeTo("slow", 0.1); // fadeTo : opacity(밝기,진한)
+                $("#div2").fadeTo("slow", 0.5); // 숫자에 따라 투명도가 달라진다.
+                $("#div3").fadeTo("slow", 1.0); 
+            });
+            $("#btn5").click(function(){
+                $("#div1").slideToggle("slow"); // 슬라이드 형식으로 나온다.
+                $("#div2").slideToggle("fast"); 
+                $("#div3").slideToggle(); 
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <button id="btn1">fadeIn</button>
+    <button id="btn2">fadeOut</button>
+    <button id="btn3">fadeTOggle</button>
+    <button id="btn4">fadeTO</button>
+    <button id="btn5">slideTOggle</button>
+    
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
