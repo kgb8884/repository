@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+   
+    <link rel="stylesheet" href="/jo.js/jojnform.css">
+    <script src="/jo.css/joinform.js"></script>
+
+
+  
+</head>
+<body>
+    <h2>회원가입</h2>
+    아이디:
+        <input type="text" id="id" placeholder="6~10자리,소문자,숫자입력" onblur="idcheck()">
+        <span id="id-check"></span><br>
+    비밀번호:
+        <input type="text" id="pw" placeholder="8~16자리,숫자,대소문자,특수문자입력" onblur="pwcheck()">
+        <span id="pw-check"></span><br>
+    비밀번호 확인:
+        <input type="text" id="pw-hwag" onkeyup="pwconfirm()">
+        <span id="pw-confirm"></span><br>
+    이름:
+        <input type="text" id="name" onblur="namecheck()">
+        <span id="name-check"></span><br>
+    이메일:
+        <input type="text" id="email">@
+        <input type="text" id="email-main">
+        <select id="email-select" onchange="emailselect()">
+            <option value="">직접입력</option>
+            <option value="naver.com">naver.com</option>
+            <option value="hanmail.net">hanmail.net</option>
+            <option value="gmail.com">gmail.com</option>
+        </select><br>
+    전화번호:
+        <input type="text" id="phone" onblur="phonecheck()">
+        <span id="phone-check"></span>
+</body>
+</html>
